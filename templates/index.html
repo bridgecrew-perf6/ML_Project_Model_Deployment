@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shathik ML model deployment</title>
+</head>
+
+<body>
+
+    <div class="bg-img">
+        <img src="back.jpg">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Chennai House price Prediction Done by Mohamed Shathik</h2>
+            
+            <h3>What Is Area?</h3><br><select name="Area" id="first" required="required">
+                <option value=0>Karapakkam</option>
+                <option value=1>Adyar</option>
+                <option value=2>Chrompet</option>
+                <option value=3>Velachery</option>
+                <option value=4>KK Nagar</option>
+                <option value=5>Anna Nagar</option>
+                <option value=6>T Nagar</option>
+            </select>
+            <h3>Are Parking facility?</h3><br><select name="Parking facility" id="second" required="required">
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+            <h3>BUILDTYPE</h3><br><select name="BUILDTYPE" id="third" required="required">
+                <option value=0>House</option>
+                <option value=1>Others</option>
+                <option value=2>Commercial</option>
+            </select>
+            <h3>Utility Availability</h3><br><select name="Utility" id="fourth" required="required">
+                <option value=0>ELO</option>
+                <option value=1>NoSewar</option>
+                <option value=2>AllPub</option>
+            </select>
+            <h3>STREET TYPE</h3><br><select name="Street" id="fifth" required="required">
+                <option value=0>No Access</option>
+                <option value=1>Paved</option>
+                <option value=2>Gravel</option>
+            </select>
+            <h3>What Is Sale condition?</h3><br><select name="Sale condition" id="sixth" required="required">
+                <option value=0>Partial</option>
+                <option value=1>Family</option>
+                <option value=2>AbNormal</option>
+                <option value=3>Normal Sale</option>
+                <option value=4>AdjLand</option>
+            </select>
+            <h3>What Is MZZONE?</h3><br><select name="MZzone" id="seventh" required="required">
+                <option value=0>A</option>
+                <option value=1>C</option>
+                <option value=2>I</option>
+                <option value=3>RH</option>
+                <option value=4>RL</option>
+                <option value=4>RM</option>
+                
+            </select> 
+        </select><h3>INTsQft enter between(500-2000)</h3>
+            <input id="first" name="INTsqft" type="number ">
+            <h3>YearBUILD Enter between(1960-2000)</h3>
+            <input id="first" name="YearBUILD" type="number ">
+            <h3>What is the House life?Enter between (0-50)</h3><br><input id="second" name="Houselife" required="required">
+
+            <br><br><button id="sub" type="submit ">Predicted the Selling Price by Shathik</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
